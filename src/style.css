@@ -1,0 +1,159 @@
+.flex-container {
+   
+    position: relative;
+    background: rgb(14, 11, 12);
+    height: 160px;
+    width: 1324px;
+    display: flex;
+    border:-15px;
+    margin-top: -1%;
+    margin-left: -1%; 
+    padding: 15px;
+    
+
+  }
+   
+#gif {
+width:40px;
+height:40px;
+position: absolute;
+left: 1309px;
+top: 2%;
+
+}
+
+#titleRM {
+  
+
+  width: 558px;
+  height: 163px;
+  margin-left: 75%;
+  
+}
+
+.magGlass {
+  position: absolute;
+  left: 1320px;
+  top: 9.5%;
+  
+  
+  
+}
+
+body {
+
+
+  min-height: 50vh;
+  background-image: url("img/backgroRM1.jpg");
+  flex-direction: column;
+  background-size: cover;
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+}
+
+body:before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  min-height: 104vh;
+  background: linear-gradient(to top right, #271d2b, #000000cb);
+  opacity: 0.6;
+  z-index:-3;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.backTitle{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    margin: 0;
+    width: 1333px;
+    height: 197px;
+    background-color: #01010D;
+    
+  }*/
+
+ 
+  /*.title {
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    display: inline-block;
+  }
+
+
+  .gif {
+    border-top: 0cm;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    justify-content: center;
+  }
+
+.portal{
+  width: 100px;
+  margin: 100px;
+}
+
+header{
+  background-color: black;
+  width: 1333px;
+  height: 197px;
+}
+.ricktitle{
+  justify-content: center;
+  
+}
+
+.background {
+    margin:0;
+    min-height: 70vh;
+    background-image: url("img/backgroRM1.jpg");
+    flex-direction: column;
+    background-size: cover;
+    background-position: absolute;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    
+    }
+
+
+    /*body:before {
+        content:"";
+       
+        position:absolute;
+        top:0;
+        left:0;
+        width: 107%;
+        min-height: 104vh;
+        background: linear-gradient(60deg, #e9f0f1, #7a2d8b);
+        opacity: 0.6;
+        z-index:-3;
+        }*/
