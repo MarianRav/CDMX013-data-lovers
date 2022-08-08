@@ -8,9 +8,12 @@
     border:-15px;
     margin-top: -1%;
     margin-left: -1%; 
-    padding: 15px;
-    
+    padding: 15px; 
 
+  }
+
+  .name{
+    color: whitesmoke;
   }
    
 #gif {
