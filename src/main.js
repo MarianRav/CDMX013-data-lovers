@@ -4,13 +4,21 @@ import data from './data/rickandmorty/rickandmorty.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 console.log(example, data);
-console.log(data.results.name[0]);
+console.log(data.results[0]);
 
-const container = document.getElementById('container');
+const section = document.getElementById('pickles'); 
+
 
 data.results.forEach(element =>{
-    container.innerHTML=`
-    <div class="name">Name: ${data.results.name}
-                 ${data.results.species}
-                 ${data.results.status}</div>`
+        let html= `
+        <section id="pickles">
+        <img src=${element.image} class="image">
+        <div class="name">Name: ${element.name} </div>
+        <div class="species">Species: ${element.species} </div>
+        <div class="status">Status:${element.status}</div>
+        </section>
+        `;
+        section.insertAdjacentHTML('beforebegin', html);
+    
 })
+
