@@ -13,9 +13,12 @@ data.results.forEach(element =>{
         let html= `
         <section id="pickles">
         <img src=${element.image} class="image">
-        <div class="name">Name: ${element.name} </div>
-        <div class="species">Species: ${element.species} </div>
-        <div class="status">Status:${element.status}</div>
+        <div class="lettersWrap">
+            <div class="name">  ${element.name} </div>
+            <div class="species">Species: ${element.species} </div>
+            <div class="status">Status: ${element.status}</div>
+            <img src= "img/pinRick&M.png" class="pin">
+        </div>
         </section>
         `;
         section.insertAdjacentHTML('beforebegin', html);
