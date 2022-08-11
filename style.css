@@ -1,0 +1,186 @@
+.flex-container {
+   
+    position: relative;
+    background: rgb(14, 11, 12);
+    height: 160px;
+    width: 1324px;
+    display: flex;
+    border:-15px;
+    margin-top: -1%;
+    margin-left: -1%; 
+    padding: 15px; 
+
+  }
+   
+#gif {
+width:40px;
+height:40px;
+position: absolute;
+left: 1309px;
+top: 2%;
+
+}
+
+#titleRM {
+  
+
+  width: 558px;
+  height: 163px;
+  margin-left: 75%;
+  
+}
+
+.magGlass {
+  position: absolute;
+  left: 1322px;
+  top: 9%;
+   
+}
+
+body {
+  min-height: 50vh;
+  background-image: url("img/backgroRM1.jpg");
+  background-size: cover;
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  
+}
+
+body:before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  min-height: 4725vh;
+  background: linear-gradient(to top right, #271d2b, #000000cb);
+  opacity: 0.6;
+  z-index:-3;
+  }
+
+  .flex-boxx {
+    
+    background-color: transparent;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+  }
+
+  h1 {
+    text-shadow: 0 0 4px purple;
+    font-family: 'Schoolbell', cursive;
+    color: #43BFDB;
+    margin-bottom: -4%;
+    margin-left: 15px;
+    
+  }
+
+
+  #pickles {
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    width:300px;
+    height:160px;
+    background-image: url("img/pickle.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20%;
+    padding: 1px;
+    margin: 4%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  
+  }
+  
+  .pin {
+    image: url(img/pinRick&M.png);
+    width:40px;
+    height:40px;
+    margin-top: 1%;
+    margin-left: 25%;
+
+  }
+
+
+  .lettersWrap {
+
+    background-color: transparent;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 1;
+    margin-top: -65%;
+    margin-bottom: -1%;
+    margin-left: 30%;
+    white-space: nowrap;
+   
+  }
+ 
+  .name {
+    font-size: 20px;
+    color: #101618;
+    padding: 1%;
+    font-family: 'Schoolbell', cursive;
+    text-shadow: 0 0 4px rgb(202, 226, 203);
+    text-align: justify;
+  
+
+  }
+
+  .species {
+    font-size: 17px;
+    padding: 4%;
+    color:  rgba(250, 250, 250, 0.79);
+    text-shadow:  0 0 20px rgba(199, 173, 26, 0.79);
+    text-align: justify;
+    font-family: 'Schoolbell', cursive;
+    width: 100%;
+    height: 10%;
+
+
+  }
+
+  .status {
+    font-size: 17px;
+    padding: 5%;
+    color:  rgba(250, 250, 250, 0.79);
+    text-shadow:  0 0 20px rgba(199, 173, 26, 0.79);
+    text-align: justify;
+    font-family: 'Schoolbell', cursive;
+    
+    
+  }
+
+  .image{
+    width: 130px; 
+    height: 130px;
+    margin-top: 4%;
+    margin-left: 2%;
+    border-radius: 20%;
+    border:1px solid black;
+   
+  }
+
+  #button {
+   background-color: #72b01d;
+   font-family: 'Schoolbell', cursive;
+   color:aliceblue;
+   border-radius: 21px;
+   padding: .5%;
+   margin-left: 47%;
+   text-shadow: 0 0 2px rgb(5, 5, 5);
+   border:1px solid rgb(255, 255, 255);
+
+
+
+  }
