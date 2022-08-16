@@ -180,5 +180,17 @@ body:before {
    border:1px solid rgb(255, 255, 255);
 
 
-
   }
+
+  .rectangle{
+    background-color: palevioletred;
+    display: none;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+  }
+
+ /* INTENTANDO USAR OTRO BLOQUE
+  #bloque2{
+    display: none;
+  }*/
