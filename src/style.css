@@ -36,6 +36,17 @@ top: 2%;
   top: 9%;
    
 }
+.navbar {
+position: absolute;
+width: 114.24px;
+height: 40px;
+left: 1291px;
+top: 177px;
+background-color: #101618;
+color: #72b01d;
+font-family: 'Schoolbell', cursive;
+}
+
 
 body {
   min-height: 50vh;
@@ -80,7 +91,7 @@ body:before {
   }
 
 
-  #pickles {
+  .pickles {
     border: 1px solid rgb(0, 0, 0);
     display: flex;
     flex-flow: row;
@@ -122,6 +133,7 @@ body:before {
     margin-bottom: -1%;
     margin-left: 30%;
     white-space: nowrap;
+    overflow: hidden;
    
   }
  
@@ -190,7 +202,7 @@ body:before {
     z-index: 1;
   }
 
- /* INTENTANDO USAR OTRO BLOQUE
+ /* INTENTANDO USAR OTRO BLOQUE*/
   #bloque2{
     display: none;
-  }*/
+  }
