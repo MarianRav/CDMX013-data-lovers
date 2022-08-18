@@ -50,8 +50,6 @@ gender.addEventListener("change", (e)=>{
   
       let typeGender = filterGender(e.target.value, dataCharacters);
       section.innerHTML="";
-      const content=document.getElementById("content")
-      content.innerHTML="";
       console.log(typeGender);
       typeGender.forEach(element =>{
        
@@ -67,7 +65,7 @@ gender.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       content.innerHTML+=ejercicio;
+       section.innerHTML+=ejercicio;
        
       })
      
@@ -79,8 +77,6 @@ species.addEventListener("change", (e)=>{
   
       let typeSpecies = filterSpecies(e.target.value, dataCharacters);
       section.innerHTML="";
-      const content=document.getElementById("content")
-      content.innerHTML="";
       console.log(typeSpecies);
       typeSpecies.forEach(element =>{
        
@@ -96,7 +92,7 @@ species.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       content.innerHTML+=ejercicio;
+       section.innerHTML+=ejercicio;
       })
     })
 
@@ -107,8 +103,7 @@ status.addEventListener("change", (e)=>{
   
       let typeStatus = filterStatus(e.target.value, dataCharacters);
       section.innerHTML="";
-      const content=document.getElementById("content")
-      content.innerHTML="";
+  
       console.log(typeStatus);
       typeStatus.forEach(element =>{
        
@@ -124,7 +119,7 @@ status.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       content.innerHTML+=ejercicio;
+       section.innerHTML+=ejercicio;
       })
     })
 
@@ -135,8 +130,7 @@ type.addEventListener("change", (e)=>{
   
       let type = filterType(e.target.value, dataCharacters);
       section.innerHTML="";
-      const content=document.getElementById("content")
-      content.innerHTML="";
+     
       console.log(type);
       type.forEach(element =>{
        
@@ -152,7 +146,7 @@ type.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       content.innerHTML+=ejercicio;
+       section.innerHTML+=ejercicio;
       })
     })
 
@@ -163,8 +157,7 @@ origin.addEventListener("change", (e)=>{
   
       let typeOrigin = filterOrigin(e.target.value, dataCharacters);
       section.innerHTML="";
-      const content=document.getElementById("content")
-      content.innerHTML="";
+    
       console.log(typeOrigin);
       typeOrigin.forEach(element =>{
        
@@ -180,7 +173,7 @@ origin.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       content.innerHTML+=ejercicio;
+       section.innerHTML+=ejercicio;
       })
     })
 
@@ -191,8 +184,8 @@ location.addEventListener("change", (e)=>{
   
       let typeLocation = filterLocation(e.target.value, dataCharacters);
       section.innerHTML="";
-      const content=document.getElementById("content")
-      content.innerHTML="";
+      /*const content=document.getElementById("content")
+      content.innerHTML="";*/
       console.log(typeLocation);
       typeLocation.forEach(element =>{
        
@@ -208,6 +201,6 @@ location.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       content.innerHTML+=ejercicio;
+       section.innerHTML+=ejercicio;
       })
     })
