@@ -7,7 +7,7 @@
     display: flex;
     border:-15px;
     margin-top: -1%;
-    margin-left: -1%; 
+    margin-left: -1;
     padding: 15px; 
 
   }
@@ -40,11 +40,14 @@ top: 2%;
 position: absolute;
 width: 114.24px;
 height: 40px;
-left: 1291px;
+left: 80%;
 top: 177px;
 background-color: #101618;
 color: #72b01d;
 font-family: 'Schoolbell', cursive;
+float: left;
+list-style: none;
+
 }
 
 
@@ -57,6 +60,7 @@ body {
   background-attachment: fixed;
   overflow-x: hidden;
   
+ 
 }
 
 body:before {
@@ -200,9 +204,4 @@ body:before {
     width: 70%;
     height: 70%;
     z-index: 1;
-  }
-
- /* INTENTANDO USAR OTRO BLOQUE*/
-  #bloque2{
-    display: none;
   }
