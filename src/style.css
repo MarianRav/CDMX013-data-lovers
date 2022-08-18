@@ -22,32 +22,28 @@ top: 2%;
 }
 
 #titleRM {
-  
-
   width: 558px;
   height: 163px;
   margin-left: 75%;
-  
 }
 
 .magGlass {
   position: absolute;
   left: 1464px;
-  top: 9%;
-   
+  top: 9%;   
 }
-.navbar {
-position: absolute;
-width: 114.24px;
-height: 40px;
-left: 80%;
-top: 177px;
-background-color: #101618;
-color: #72b01d;
-font-family: 'Schoolbell', cursive;
-float: left;
-list-style: none;
 
+.navbar {
+  background-color: #271d2b;
+  width: 100%;
+  display: inline-block;
+}
+
+.options{
+  display: inline-block;
+  color: #72b01d;
+  font-family: 'Schoolbell', cursive;
+  text-align: center;
 }
 
 
@@ -59,8 +55,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
-  
- 
 }
 
 body:before {
@@ -82,7 +76,6 @@ body:before {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
   }
 
   h1 {
@@ -205,3 +198,4 @@ body:before {
     height: 70%;
     z-index: 1;
   }
+
