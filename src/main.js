@@ -8,6 +8,7 @@ import data from './data/rickandmorty/rickandmorty.js';
 console.log(filterSpecies);
 console.log(data.results[0]);
 
+//mostrar data
 const section = document.getElementById('container'); 
 
 data.results.forEach(element =>{
@@ -25,15 +26,47 @@ data.results.forEach(element =>{
         `;
        section.innerHTML+=html
 })
+
+let dataCharacters= data.results
+
+//Button to reset All Characters
+
+const allCharacters = document.getElementById('btnAllCharacters'); 
+allCharacters.addEventListener("click", resetCharacters);
+function resetCharacters () {
+  section.innerHTML="";
+  console.log(allCharacters);
+  dataCharacters.forEach(element =>{
+    let html= `
+    <section class="pickles class="flex-boxx"">
+    <img src=${element.image} class="image">
+    <div class="lettersWrap" id="prueba">
+        <div class="name">  ${element.name} </div>
+        <div class="species">Species: ${element.species} </div>
+        <div class="status">Status: ${element.status}</div>
+        <img class="pin" id="logo" src= "img/pinRick&M.png">
+       
+    </div>
+    </section>
+    `;
+   section.innerHTML+=html
+})
+gender.value="0";
+species.value="0";
+status.value="0";
+type.value="0";
+origin.value="0";
+location.value="0";
+} 
+
+
 //Button scrolls to the top of the document
 let mybutton = document.getElementById("button");
-mybutton.addEventListener("click",topFunction)
+mybutton.addEventListener("click",topFunction) 
    function topFunction() {
    document.body.scrollTop = 0;
    document.documentElement.scrollTop = 0;
 }
-
-let dataCharacters= data.results
 
 
 //GENDER --opciones
@@ -47,7 +80,29 @@ console.log(busqueda);
 const gender = document.getElementById("gender");
 gender.addEventListener("change", (e)=>{
      console.log(filterGender(e.target.value, dataCharacters));
+    
+     if (e.target.value==="0") {
+      section.innerHTML=""; 
+        dataCharacters.forEach(element =>{
+       
+          let ejercicio = `
+          
+          <section class="pickles" class="flex-boxx">
+          <img src=${element.image} class="image">
+          <div class="lettersWrap" id="prueba">
+              <div class="name">  ${element.name} </div>
+              <div class="species">Species: ${element.species} </div>
+              <div class="status">Status: ${element.status}</div>
+              <img class="pin" id="logo" src= "img/pinRick&M.png">
   
+          </div>
+          </section>`
+         section.innerHTML+=ejercicio;
+         
+        })
+       
+      }
+      else {
       let typeGender = filterGender(e.target.value, dataCharacters);
       section.innerHTML="";
       console.log(typeGender);
@@ -68,7 +123,7 @@ gender.addEventListener("change", (e)=>{
        section.innerHTML+=ejercicio;
        
       })
-     
+    }  
 })
 // filter Species
 const species= document.getElementById("species");

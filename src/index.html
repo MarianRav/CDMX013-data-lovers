@@ -18,46 +18,50 @@
 
            </section>
   <div class="navbar"> 
+    <!--button of all characters-->
+    
       <div class="options"> Gender </br>
         <select id="gender"> 
-          <option value="genderV">Gender</option>
-          <option value="unknown"> Unknown</option>
-          <option value="Genderless"> Genderless</option>
-          <option value="Male"> Male</option>
-          <option value="Female"> Female</option>
+          <option   value="0"> Select --</option>
+          <option   value="unknown"> Unknown</option>
+          <option   value="Genderless"> Genderless</option>
+          <option   value="Male"> Male</option>
+          <option   value="Female"> Female</option>
         </select>
       </div>
 
       <div class="options"> Species <br/>
         <select id="species"> 
-          <option value="speciesV">Species</option>
-          <option value="Human"> Human</option>
-          <option value="Alien"> Alien</option>
-          <option value="unknown">Unknown</option>
-          <option value="Robot">Robot</option>
-          <option value="Animal">Animal</option>
-          <option value="Vampire">Vampire</option>
-          <option value="Humanoid">Humanoid</option>
-          <option value="Cronenberg">Cronenberg</option>
-          <option value="Mytholog">Mytholog</option>
-          <option value="Disease">Disease</option>
-          <option value="Parasite">Parasite</option>
-          <option value="Poopybutthole">Poopybutthole</option>
+
+          <option  value="0"> Select --</option>
+          <option  value="Human"> Human</option>
+          <option  value="Alien"> Alien</option>
+          <option  value="unknown">Unknown</option>
+          <option  value="Robot">Robot</option>
+          <option  value="Animal">Animal</option>
+          <option  value="Vampire">Vampire</option>
+          <option  value="Humanoid">Humanoid</option>
+          <option  value="Cronenberg">Cronenberg</option>
+          <option  value="Mytholog">Mytholog</option>
+          <option  value="Disease">Disease</option>
+          <option  value="Parasite">Parasite</option>
+          <option  value="Poopybutthole">Poopybutthole</option>
+
         </select>
       </div>
 
       <div class="options"> Status</br>
         <select id="status"> 
-          <option value="statusV">Status</option>
-          <option value="Alive"> Alive</option>
-          <option value="Dead"> Dead</option>
-          <option value="unknown"> Unknown</option>
+           <option value="0"> Select --</option>
+           <option  value="Alive"> Alive</option>
+           <option  value="Dead"> Dead</option>
+           <option  value="unknown"> Unknown</option>
         </select>
       </div>
   
       <div class="options"> Type </br>
         <select id="type"> 
-          <option value="typeV">Type</option>
+          <option value="0"> Select --</option>
           <option value="Alien">Alien</option>
           <option value="Alligator-Person">Alligator-Person</option>
           <option value="Alphabetrian">Alphabetrian</option>
@@ -124,7 +128,7 @@
 
        <div class="options"> Origin </br>
         <select id="origin">
-          <option value="originV"> Origin</option>
+          <option value="0"> Select --</option>
           <option value="Abadango"> Abadango</option>
           <option value="Alphabetrium"> Alphabetrium</option>
           <option value="Anatomy Park"> Anatomy Park</option>
@@ -193,7 +197,7 @@
 
       <div class="options"> Location </br>
         <select id="location"> 
-          <option value="locationV">Location</option>
+          <option value="0"> Select --</option>
           <option value="Abadango">Abadango</option>
           <option value="Alien Day Spa">Alien Day Spa</option>
           <option value="Alphabetrium">Alphabetrium</option>
@@ -234,12 +238,15 @@
           <option value="Zigerion's Base">Zigerion's Base</option>
         </select>
       </div>
+
+      <button id="btnAllCharacters">RESET</button>
+
     </div>
   </header>
 
   <body>
 
-    <h1 class="characters">PERSONAJES</h1>
+    <h1 class="characters">CHARACTERS</h1>
     
     <div id="content">
       <div id= "container" class="flex-boxx"> </div>
