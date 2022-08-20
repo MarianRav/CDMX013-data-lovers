@@ -1,0 +1,263 @@
+.flex-container {
+   
+    position: relative;
+    background: rgb(14, 11, 12);
+    height: 160px;
+    width: 1500px;
+    display: flex;
+    border:-15px;
+    margin-top: -1%;
+    margin-left: -1;
+    padding: 15px; 
+
+  }
+   
+#gif {
+width:40px;
+height:40px;
+position: absolute;
+left: 1450px;
+top: 2%;
+
+}
+
+#titleRM {
+  width: 558px;
+  height: 163px;
+  margin-left: 75%;
+}
+
+.magGlass {
+  position: absolute;
+  left: 1464px;
+  top: 9%;   
+}
+
+.navbar {
+
+width: 100%;
+display: inline-block;
+text-align: center;
+
+}
+
+
+#btnAllCharacters {
+  font-family: 'Schoolbell', cursive;
+  letter-spacing: 2px;
+  text-shadow: 4px 2px 3px rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(140, 192, 143, 0.295) 0.55%, rgba(41, 153, 56, 0.644) 100%);
+  border-radius: 25px;
+  font-style:normal;
+  font-size: 17px;
+  text-align: center;
+  color: #9ADBDF;
+  border: 1px solid #7DBC8B;
+  width: 5%;
+  padding: .5%;
+  margin-left:5%;
+
+}
+
+#btnAllCharacters:hover {
+  background: linear-gradient(180deg, rgba(67, 255, 120, 0.44) 0.55%, rgba(27, 112, 151, 0.493) 100%);
+  cursor:pointer;
+  backdrop-filter: blur(42px);
+  border-radius: 25px;
+
+ }
+
+.options {
+  display: inline-block;
+  color: #72b01d;
+  font-style: normal;
+  font-family: 'Schoolbell';
+  font-size:large;
+  text-align: center;
+  width: 10%;
+
+}
+
+#gender,#species,#status, #type, #origin, #location {
+  font-family: 'Schoolbell', cursive;
+  text-shadow: 4px 2px 3px rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(67, 255, 120, 0.44) 0.55%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 25px;
+  font-style:normal;
+  font-size: 17px;
+  text-align: center;
+  color: #9ADBDF;
+  border: 1px solid #7DBC8B;
+  width: 60%;
+}
+
+#gender:hover, #species:hover, #status:hover, #type:hover, #origin:hover, #location:hover{
+
+  cursor:pointer;
+  background: linear-gradient(180deg, rgba(140, 192, 143, 0.295) 0.55%, rgba(41, 153, 56, 0.644) 100%);
+  backdrop-filter: blur(42px);
+  border-radius: 25px;
+
+}
+
+option  {
+ 
+  background:rgb(0, 0, 0);
+  border-radius:150%;
+  cursor: pointer;
+  
+}
+
+
+body {
+  min-height:50vh;
+  background-image: url("img/backgroRM1.jpg");
+  background-size: cover;
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+body:before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  min-height: 4312vh;
+  background: linear-gradient(to top right, #271d2b, #000000cb);
+  opacity: 0.6;
+  z-index:-3;
+  }
+
+.flex-boxx {
+  background-color: transparent;
+  padding: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+
+h1 {
+ text-shadow: 0 0 4px purple;
+ font-family: 'Schoolbell', cursive;
+ color: #43BFDB;
+ margin-bottom: -4%;
+ margin-left: 15px;
+ margin-left: 8%;
+    
+  }
+
+
+  .pickles {
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    width:300px;
+    height:160px;
+    background-image: url("img/pickle.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20%;
+    padding: 1px;
+    margin: 4%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  
+  }
+  
+  .pin {
+    
+    width:40px;
+    height:40px;
+    margin-top: 1%;
+    margin-left: 25%;
+
+  }
+
+
+  .lettersWrap {
+
+    background-color: transparent;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 1;
+    margin-top: -65%;
+    margin-bottom: -1%;
+    margin-left: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+   
+  }
+ 
+  .name {
+    font-size: 20px;
+    color: #101618;
+    padding: 1%;
+    font-family: 'Schoolbell', cursive;
+    text-align: justify;
+    text-shadow: 4px 3px 5px rgb(150, 250, 92);
+
+  }
+
+  .species {
+    text-shadow: 2px 2px 2px rgb(148, 62, 228);
+    font-size: 17px;
+    padding: 4%;
+    color:  rgba(250, 250, 250, 0.79);
+    text-align: justify;
+    font-family: 'Schoolbell', cursive;
+    width: 100%;
+    height: 10%;
+
+
+  }
+
+  .status {
+    font-size: 17px;
+    padding: 5%;
+    color:  rgba(250, 250, 250, 0.79);
+    text-align: justify;
+    font-family: 'Schoolbell', cursive;
+    text-shadow: 2px 3px 5px rgba(230, 10, 10, 0.67);
+    
+  }
+
+  .image{
+    width: 130px; 
+    height: 130px;
+    margin-top: 4%;
+    margin-left: 2%;
+    border-radius: 20%;
+    border:1px solid black;
+   
+  }
+
+  #button {
+   
+   background-color: #72b01d;
+   font-family: 'Schoolbell', cursive;
+   color:aliceblue;
+   border-radius: 21px;
+   padding: .5%;
+   margin-left: 47%;
+   text-shadow: 3px 3px 4px rgb(111, 50, 255);
+   border:1px solid rgb(255, 255, 255);
+
+
+  }
+
+  .rectangle{
+    background-color: palevioletred;
+    display: none;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+  }
+
