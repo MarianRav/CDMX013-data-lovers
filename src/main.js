@@ -11,7 +11,7 @@ console.log(data.results[0]);
 //mostrar data
 const section = document.getElementById('container'); 
 
-data.results.forEach(element =>{
+data.results.slice(0, 50).forEach(element =>{
         let html= `
         <section class="pickles class="flex-boxx"">
         <img src=${element.image} class="image">
@@ -70,12 +70,12 @@ mybutton.addEventListener("click",topFunction)
 
 
 //GENDER --opciones
-const busqueda = dataCharacters.reduce((dato, filtro)=>{
+/*const busqueda = dataCharacters.reduce((dato, filtro)=>{
   dato[filtro.species] = ++dato[filtro.species] || 0;
   return dato; 
-}) 
+}) */
 
-console.log(busqueda);
+
 //Filtrado género
 const gender = document.getElementById("gender");
 gender.addEventListener("change", (e)=>{
@@ -124,6 +124,12 @@ gender.addEventListener("change", (e)=>{
        
       })
     }  
+    
+species.value="0";
+status.value="0";
+type.value="0";
+origin.value="0";
+location.value="0";
 })
 // filter Species
 const species= document.getElementById("species");
@@ -149,6 +155,11 @@ species.addEventListener("change", (e)=>{
         </section>`
        section.innerHTML+=ejercicio;
       })
+gender.value="0";
+status.value="0";
+type.value="0";
+origin.value="0";
+location.value="0";
     })
 
     // filter Status
@@ -176,6 +187,11 @@ status.addEventListener("change", (e)=>{
         </section>`
        section.innerHTML+=ejercicio;
       })
+gender.value="0";
+species.value="0";
+type.value="0";
+origin.value="0";
+location.value="0";
     })
 
     // filter Type
@@ -203,6 +219,11 @@ type.addEventListener("change", (e)=>{
         </section>`
        section.innerHTML+=ejercicio;
       })
+gender.value="0";
+species.value="0";
+status.value="0";
+origin.value="0";
+location.value="0";
     })
 
     // filter Origin
@@ -230,6 +251,11 @@ origin.addEventListener("change", (e)=>{
         </section>`
        section.innerHTML+=ejercicio;
       })
+gender.value="0";
+species.value="0";
+status.value="0";
+type.value="0";
+location.value="0";
     })
 
     // filter Location
@@ -258,4 +284,9 @@ location.addEventListener("change", (e)=>{
         </section>`
        section.innerHTML+=ejercicio;
       })
+gender.value="0";
+species.value="0";
+status.value="0";
+type.value="0";
+origin.value="0";
     })
