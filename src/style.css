@@ -77,7 +77,7 @@ text-align: center;
 
 }
 
-#gender,#species,#status, #type, #origin, #location {
+#gender,#species,#status, #type, #origin, #location, #order {
   font-family: 'Schoolbell', cursive;
   text-shadow: 4px 2px 3px rgb(0, 0, 0);
   background: linear-gradient(180deg, rgba(67, 255, 120, 0.44) 0.55%, rgba(255, 255, 255, 0) 100%);
