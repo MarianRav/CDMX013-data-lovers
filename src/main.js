@@ -11,8 +11,8 @@ console.log(data.results[0]);
 
 //mostrar data
 const section = document.getElementById('container'); 
-
-data.results.slice(0, 50).forEach(element =>{
+const sliceResult= data.results.slice(0, 50)
+sliceResult.forEach(element =>{
         let html= `
         <section class="pickles class="flex-boxx"">
         <img src=${element.image} class="image">
@@ -28,23 +28,35 @@ data.results.slice(0, 50).forEach(element =>{
        section.innerHTML+=html
 })
 
-let dataCharacters= data.results
+let dataCharacters= data.results;
 
 //Alphabetical Order
-const alphaIntent=dataCharacters.sort(function (a, b ) {
+/*const alphaIntent=dataCharacters.sort(function (a, b ) {
  if (a.name > b.name) {
   return 1;
  } 
  if (a.name < b.name) {
 return -1;
  }
- 
 })
+
+const alphaReverse=dataCharacters.sort(function (a, b ) {
+  if (a.name > b.name) {
+   return -1;
+  } 
+  if (a.name < b.name) {
+ return 1;
+  }
+ })
+ console.log(alphaReverse);*/
+
+
 const orderSelect=document.getElementById("order");
 orderSelect.addEventListener ("change", (e) => {
   //let sortBy=e.target.value;
   console.log(alphaOrd(e.target.value, dataCharacters));
-  let orderBox= alphaOrd (e.target.value, dataCharacters);
+  console.log(e.target.value);
+ let orderBox= alphaOrd (e.target.value, sliceResult);
   section.innerHTML="";
   orderBox.forEach(element =>{
        
@@ -66,7 +78,7 @@ orderSelect.addEventListener ("change", (e) => {
 
 });
 
-console.log (alphaIntent);
+//console.log (alphaIntent);
 
 
 
