@@ -5,6 +5,7 @@ import { filterType } from './data.js';
 import { filterOrigin } from './data.js';
 import { filterLocation } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
+import {alphaOrd} from './data.js';
 console.log(filterSpecies);
 console.log(data.results[0]);
 
@@ -28,6 +29,47 @@ data.results.slice(0, 50).forEach(element =>{
 })
 
 let dataCharacters= data.results
+
+//Alphabetical Order
+const alphaIntent=dataCharacters.sort(function (a, b ) {
+ if (a.name > b.name) {
+  return 1;
+ } 
+ if (a.name < b.name) {
+return -1;
+ }
+ 
+})
+const orderSelect=document.getElementById("order");
+orderSelect.addEventListener ("change", (e) => {
+  //let sortBy=e.target.value;
+  console.log(alphaOrd(e.target.value, dataCharacters));
+  let orderBox= alphaOrd (e.target.value, dataCharacters);
+  section.innerHTML="";
+  orderBox.forEach(element =>{
+       
+    let ejercicio = `
+    
+    <section class="pickles" class="flex-boxx">
+    <img src=${element.image} class="image">
+    <div class="lettersWrap" id="prueba">
+        <div class="name">  ${element.name} </div>
+        <div class="species">Species: ${element.species} </div>
+        <div class="status">Status: ${element.status}</div>
+        <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+    </div>
+    </section>`
+   section.innerHTML+=ejercicio;
+   
+  })
+
+});
+
+console.log (alphaIntent);
+
+
+
 
 //Button to reset All Characters
 
