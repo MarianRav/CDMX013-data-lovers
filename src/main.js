@@ -11,7 +11,7 @@ console.log(data.results[0]);
 
 //mostrar data
 const section = document.getElementById('container'); 
-const sliceResult= data.results.slice(0, 50)
+const sliceResult= data.results.slice(0, 100)
 sliceResult.forEach(element =>{
         let html= `
         <section class="pickles class="flex-boxx"">
@@ -31,36 +31,15 @@ sliceResult.forEach(element =>{
 let dataCharacters= data.results;
 
 //Alphabetical Order
-/*const alphaIntent=dataCharacters.sort(function (a, b ) {
- if (a.name > b.name) {
-  return 1;
- } 
- if (a.name < b.name) {
-return -1;
- }
-})
-
-const alphaReverse=dataCharacters.sort(function (a, b ) {
-  if (a.name > b.name) {
-   return -1;
-  } 
-  if (a.name < b.name) {
- return 1;
-  }
- })
- console.log(alphaReverse);*/
-
 
 const orderSelect=document.getElementById("order");
 orderSelect.addEventListener ("change", (e) => {
-  //let sortBy=e.target.value;
-  console.log(alphaOrd(e.target.value, dataCharacters));
-  console.log(e.target.value);
- let orderBox= alphaOrd (e.target.value, sliceResult);
-  section.innerHTML="";
-  orderBox.forEach(element =>{
+  let orderBox= alphaOrd(sliceResult);
+  if(e.target.value === "Z-A"){
+    section.innerHTML="";
+    orderBox.forEach(element =>{
        
-    let ejercicio = `
+    let html= `
     
     <section class="pickles" class="flex-boxx">
     <img src=${element.image} class="image">
@@ -72,16 +51,30 @@ orderSelect.addEventListener ("change", (e) => {
 
     </div>
     </section>`
-   section.innerHTML+=ejercicio;
-   
+   section.innerHTML+=html;
   })
+  }
+  if(e.target.value === "A-Z"){
+    section.innerHTML="";
+    orderBox.reverse().forEach(element =>{
+       
+    let html= `
+    
+    <section class="pickles" class="flex-boxx">
+    <img src=${element.image} class="image">
+    <div class="lettersWrap" id="prueba">
+        <div class="name">  ${element.name} </div>
+        <div class="species">Species: ${element.species} </div>
+        <div class="status">Status: ${element.status}</div>
+        <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+    </div>
+    </section>`
+   section.innerHTML+=html;
+  })
+  }
 
 });
-
-//console.log (alphaIntent);
-
-
-
 
 //Button to reset All Characters
 
@@ -89,7 +82,6 @@ const allCharacters = document.getElementById('btnAllCharacters');
 allCharacters.addEventListener("click", resetCharacters);
 function resetCharacters () {
   section.innerHTML="";
-  console.log(allCharacters);
   dataCharacters.forEach(element =>{
     let html= `
     <section class="pickles class="flex-boxx"">
@@ -111,6 +103,7 @@ status.value="0";
 type.value="0";
 origin.value="0";
 location.value="0";
+orderSelect.value="0";
 } 
 
 
@@ -122,24 +115,15 @@ mybutton.addEventListener("click",topFunction)
    document.documentElement.scrollTop = 0;
 }
 
-
-//GENDER --opciones
-/*const busqueda = dataCharacters.reduce((dato, filtro)=>{
-  dato[filtro.species] = ++dato[filtro.species] || 0;
-  return dato; 
-}) */
-
-
 //Filtrado género
 const gender = document.getElementById("gender");
 gender.addEventListener("change", (e)=>{
-     console.log(filterGender(e.target.value, dataCharacters));
     
      if (e.target.value==="0") {
       section.innerHTML=""; 
-        dataCharacters.forEach(element =>{
+        sliceResult.forEach(element =>{
        
-          let ejercicio = `
+          let html= `
           
           <section class="pickles" class="flex-boxx">
           <img src=${element.image} class="image">
@@ -151,18 +135,16 @@ gender.addEventListener("change", (e)=>{
   
           </div>
           </section>`
-         section.innerHTML+=ejercicio;
+         section.innerHTML+=html;
          
         })
-       
       }
       else {
       let typeGender = filterGender(e.target.value, dataCharacters);
       section.innerHTML="";
-      console.log(typeGender);
       typeGender.forEach(element =>{
        
-        let ejercicio = `
+        let html= `
         
         <section class="pickles" class="flex-boxx">
         <img src=${element.image} class="image">
@@ -174,7 +156,7 @@ gender.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       section.innerHTML+=ejercicio;
+       section.innerHTML+=html;
        
       })
     }  
@@ -184,18 +166,17 @@ status.value="0";
 type.value="0";
 origin.value="0";
 location.value="0";
+orderSelect.value="0";
 })
 // filter Species
 const species= document.getElementById("species");
 species.addEventListener("change", (e)=>{
-     console.log(filterSpecies(e.target.value, dataCharacters));
-  
-      let typeSpecies = filterSpecies(e.target.value, dataCharacters);
-      section.innerHTML="";
-      console.log(typeSpecies);
-      typeSpecies.forEach(element =>{
-       
-        let ejercicio = `
+     
+  if (e.target.value==="0") {
+    section.innerHTML=""; 
+      sliceResult.forEach(element =>{
+     
+        let html= `
         
         <section class="pickles" class="flex-boxx">
         <img src=${element.image} class="image">
@@ -207,8 +188,30 @@ species.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       section.innerHTML+=ejercicio;
+       section.innerHTML+=html;
+       
       })
+    }
+    else {
+      let typeSpecies = filterSpecies(e.target.value, dataCharacters);
+      section.innerHTML="";
+      typeSpecies.forEach(element =>{
+       
+        let html= `
+        
+        <section class="pickles" class="flex-boxx">
+        <img src=${element.image} class="image">
+        <div class="lettersWrap" id="prueba">
+            <div class="name">  ${element.name} </div>
+            <div class="species">Species: ${element.species} </div>
+            <div class="status">Status: ${element.status}</div>
+            <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+        </div>
+        </section>`
+       section.innerHTML+=html;
+      })
+    }
     gender.value="0";
     status.value="0";
     type.value="0";
@@ -219,15 +222,34 @@ species.addEventListener("change", (e)=>{
     // filter Status
 const status= document.getElementById("status");
 status.addEventListener("change", (e)=>{
-     console.log(filterStatus(e.target.value, dataCharacters));
-  
+  if (e.target.value==="0") {
+    section.innerHTML=""; 
+      sliceResult.forEach(element =>{
+     
+        let html= `
+        
+        <section class="pickles" class="flex-boxx">
+        <img src=${element.image} class="image">
+        <div class="lettersWrap" id="prueba">
+            <div class="name">  ${element.name} </div>
+            <div class="species">Species: ${element.species} </div>
+            <div class="status">Status: ${element.status}</div>
+            <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+        </div>
+        </section>`
+       section.innerHTML+=html;
+       
+      })
+    }
+    else {
       let typeStatus = filterStatus(e.target.value, dataCharacters);
       section.innerHTML="";
   
       console.log(typeStatus);
       typeStatus.forEach(element =>{
        
-        let ejercicio = `
+        let html= `
         
         <section class="pickles" class="flex-boxx">
         <img src=${element.image} class="image">
@@ -239,27 +261,46 @@ status.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       section.innerHTML+=ejercicio;
+       section.innerHTML+=html;
       })
-gender.value="0";
-species.value="0";
-type.value="0";
-origin.value="0";
-location.value="0";
+    }
+    gender.value="0";
+    species.value="0";
+    type.value="0";
+    origin.value="0";
+    location.value="0";
     })
 
-    // filter Type
+// filter Type
 const type= document.getElementById("type");
 type.addEventListener("change", (e)=>{
-     console.log(filterType(e.target.value, dataCharacters));
-  
+  if (e.target.value==="0") {
+    section.innerHTML=""; 
+      sliceResult.forEach(element =>{
+     
+        let html= `
+        
+        <section class="pickles" class="flex-boxx">
+        <img src=${element.image} class="image">
+        <div class="lettersWrap" id="prueba">
+            <div class="name">  ${element.name} </div>
+            <div class="species">Species: ${element.species} </div>
+            <div class="status">Status: ${element.status}</div>
+            <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+        </div>
+        </section>`
+       section.innerHTML+=html;
+       
+      })
+    }
+    else {
       let type = filterType(e.target.value, dataCharacters);
       section.innerHTML="";
-     
-      console.log(type);
+  
       type.forEach(element =>{
        
-        let ejercicio = `
+        let html= `
         
         <section class="pickles" class="flex-boxx">
         <img src=${element.image} class="image">
@@ -271,27 +312,26 @@ type.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       section.innerHTML+=ejercicio;
+       section.innerHTML+=html;
       })
-gender.value="0";
-species.value="0";
-status.value="0";
-origin.value="0";
-location.value="0";
+    }
+  gender.value="0";
+  species.value="0";
+  status.value="0";
+  origin.value="0";
+  location.value="0";
     })
 
-    // filter Origin
+ // filter Origin
 const origin= document.getElementById("origin");
 origin.addEventListener("change", (e)=>{
-     console.log(filterOrigin(e.target.value, dataCharacters));
-  
-      let typeOrigin = filterOrigin(e.target.value, dataCharacters);
-      section.innerHTML="";
-    
-      console.log(typeOrigin);
-      typeOrigin.forEach(element =>{
-       
-        let ejercicio = `
+
+  if (e.target.value==="0") {
+    section.innerHTML=""; 
+
+      sliceResult.forEach(element =>{
+     
+        let html= `
         
         <section class="pickles" class="flex-boxx">
         <img src=${element.image} class="image">
@@ -303,28 +343,68 @@ origin.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       section.innerHTML+=ejercicio;
+       section.innerHTML+=html;
+       
       })
-gender.value="0";
-species.value="0";
-status.value="0";
-type.value="0";
-location.value="0";
+    }
+    else {     
+      let typeOrigin = filterOrigin(e.target.value, dataCharacters);
+      section.innerHTML="";
+      typeOrigin.forEach(element =>{
+       
+        let html= `
+        
+        <section class="pickles" class="flex-boxx">
+        <img src=${element.image} class="image">
+        <div class="lettersWrap" id="prueba">
+            <div class="name">  ${element.name} </div>
+            <div class="species">Species: ${element.species} </div>
+            <div class="status">Status: ${element.status}</div>
+            <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+        </div>
+        </section>`
+       section.innerHTML+=html;
+      })
+    }
+  gender.value="0";
+  species.value="0";
+  status.value="0";
+  type.value="0";
+  location.value="0";
     })
 
-    // filter Location
+// filter Location
 const location= document.getElementById("location");
 location.addEventListener("change", (e)=>{
-     console.log(filterLocation(e.target.value, dataCharacters));
+  if (e.target.value==="0") {
+    section.innerHTML=""; 
+      sliceResult.forEach(element =>{
+     
+        let html= `
+        
+        <section class="pickles" class="flex-boxx">
+        <img src=${element.image} class="image">
+        <div class="lettersWrap" id="prueba">
+            <div class="name">  ${element.name} </div>
+            <div class="species">Species: ${element.species} </div>
+            <div class="status">Status: ${element.status}</div>
+            <img class="pin" id="logo" src= "img/pinRick&M.png">
+
+        </div>
+        </section>`
+       section.innerHTML+=html;
+       
+      })
+    }
+    else {
   
       let typeLocation = filterLocation(e.target.value, dataCharacters);
       section.innerHTML="";
-      /*const content=document.getElementById("content")
-      content.innerHTML="";*/
-      console.log(typeLocation);
+
       typeLocation.forEach(element =>{
        
-        let ejercicio = `
+        let html= `
         
         <section class="pickles" class="flex-boxx">
         <img src=${element.image} class="image">
@@ -336,11 +416,12 @@ location.addEventListener("change", (e)=>{
 
         </div>
         </section>`
-       section.innerHTML+=ejercicio;
+       section.innerHTML+=html;
       })
-gender.value="0";
-species.value="0";
-status.value="0";
-type.value="0";
-origin.value="0";
+    }
+  gender.value="0";
+  species.value="0";
+  status.value="0";
+  type.value="0";
+  origin.value="0";
     })
