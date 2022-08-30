@@ -16,3 +16,22 @@ export const alphaOrd = (data) => {
    });
  }
  
+/* export const searchCharacter=(scoutData, inputName)=>{
+   for (let character of scoutData) {
+    let resultOfSearch="";
+    let nombre=character.name.toLowerCase();
+    if (nombre.indexOf(inputName.toLowerCase()) !== -1) {
+      resultOfSearch +=character.name;
+      return `
+      <li class="list">${character.name} <li>
+    `
+   //  return resultOfSearch;
+    } else {
+
+                              //if (nombre.indexOf(inputName) === "") {
+      return "empty"; 
+    }
+
+  }     
+
+ }*/

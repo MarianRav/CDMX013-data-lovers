@@ -6,83 +6,15 @@ import { filterOrigin } from './data.js';
 import { filterLocation } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 import {alphaOrd} from './data.js';
+//import {searchCharacter} from './data.js';
 console.log(filterSpecies);
 console.log(data.results[0]);
 
 //mostrar data
 const section = document.getElementById('container'); 
 const sliceResult= data.results.slice(0, 100)
-sliceResult.forEach(element =>{
-        let html= `
-        <section class="pickles class="flex-boxx"">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-           
-        </div>
-        </section>
-        `;
-       section.innerHTML+=html
-})
-
-let dataCharacters= data.results;
-
-//Alphabetical Order
-
-const orderSelect=document.getElementById("order");
-orderSelect.addEventListener ("change", (e) => {
-  let orderBox= alphaOrd(sliceResult);
-  if(e.target.value === "Z-A"){
-    section.innerHTML="";
-    orderBox.forEach(element =>{
-       
-    let html= `
-    
-    <section class="pickles" class="flex-boxx">
-    <img src=${element.image} class="image">
-    <div class="lettersWrap" id="prueba">
-        <div class="name">  ${element.name} </div>
-        <div class="species">Species: ${element.species} </div>
-        <div class="status">Status: ${element.status}</div>
-        <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-    </div>
-    </section>`
-   section.innerHTML+=html;
-  })
-  }
-  if(e.target.value === "A-Z"){
-    section.innerHTML="";
-    orderBox.reverse().forEach(element =>{
-       
-    let html= `
-    
-    <section class="pickles" class="flex-boxx">
-    <img src=${element.image} class="image">
-    <div class="lettersWrap" id="prueba">
-        <div class="name">  ${element.name} </div>
-        <div class="species">Species: ${element.species} </div>
-        <div class="status">Status: ${element.status}</div>
-        <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-    </div>
-    </section>`
-   section.innerHTML+=html;
-  })
-  }
-
-});
-
-//Button to reset All Characters
-
-const allCharacters = document.getElementById('btnAllCharacters'); 
-allCharacters.addEventListener("click", resetCharacters);
-function resetCharacters () {
-  section.innerHTML="";
-  dataCharacters.forEach(element =>{
+function allCards (allData) {
+  allData.forEach(element =>{
     let html= `
     <section class="pickles class="flex-boxx"">
     <img src=${element.image} class="image">
@@ -97,6 +29,68 @@ function resetCharacters () {
     `;
    section.innerHTML+=html
 })
+}
+allCards(sliceResult);
+
+let dataCharacters= data.results;
+
+//Search Function
+let formulario=document.getElementById("inputText");
+const boton=document.querySelector(".magGlass");
+const searchResult=document.getElementById("searchResults");
+
+const searchCharacter=()=>{
+  searchResult.innerHTML="";
+  console.log(formulario.value);
+  const texto=formulario.value.toLowerCase();
+  for (let character of dataCharacters) {
+    let nombre=character.name.toLowerCase();
+    if (nombre.indexOf(texto) !== -1) {
+      searchResult.innerHTML += `
+        <li class="list">${character.name} <li>
+      `
+    }
+  }
+    if (searchResult.innerHTML === "") {
+      searchResult.innerHTML += `
+      <li class="list" >Character not found...<li>
+    `
+    }
+
+}
+boton.addEventListener("click", searchCharacter)
+formulario.addEventListener("keyup", searchCharacter)
+/*function whatEver() {
+  console.log(formulario);
+ // console.log(searchCharacter);
+  console.log(searchCharacter(dataCharacters, formulario.value));
+ // return formulario; 
+
+}*/
+//Alphabetical Order
+
+const orderSelect=document.getElementById("order");
+orderSelect.addEventListener ("change", (e) => {
+  let orderBox= alphaOrd(sliceResult);
+  if(e.target.value === "Z-A"){
+    section.innerHTML="";
+    allCards(orderBox);
+  }
+  if(e.target.value === "A-Z"){
+    section.innerHTML="";
+    allCards(orderBox.reverse())
+  
+  }
+
+});
+
+//Button to reset All Characters
+
+const allCharacters = document.getElementById('btnAllCharacters'); 
+allCharacters.addEventListener("click", resetCharacters);
+function resetCharacters () {
+  section.innerHTML="";
+  allCards(dataCharacters)
 gender.value="0";
 species.value="0";
 status.value="0";
@@ -121,44 +115,12 @@ gender.addEventListener("change", (e)=>{
     
      if (e.target.value==="0") {
       section.innerHTML=""; 
-        sliceResult.forEach(element =>{
-       
-          let html= `
-          
-          <section class="pickles" class="flex-boxx">
-          <img src=${element.image} class="image">
-          <div class="lettersWrap" id="prueba">
-              <div class="name">  ${element.name} </div>
-              <div class="species">Species: ${element.species} </div>
-              <div class="status">Status: ${element.status}</div>
-              <img class="pin" id="logo" src= "img/pinRick&M.png">
-  
-          </div>
-          </section>`
-         section.innerHTML+=html;
-         
-        })
+        allCards(sliceResult)
       }
       else {
       let typeGender = filterGender(e.target.value, dataCharacters);
       section.innerHTML="";
-      typeGender.forEach(element =>{
-       
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-       
-      })
+      allCards(typeGender)
     }  
     
 species.value="0";
@@ -174,43 +136,12 @@ species.addEventListener("change", (e)=>{
      
   if (e.target.value==="0") {
     section.innerHTML=""; 
-      sliceResult.forEach(element =>{
-     
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-       
-      })
+     allCards(sliceResult)
     }
     else {
       let typeSpecies = filterSpecies(e.target.value, dataCharacters);
       section.innerHTML="";
-      typeSpecies.forEach(element =>{
-       
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-      })
+      allCards(typeSpecies)
     }
     gender.value="0";
     status.value="0";
@@ -224,45 +155,14 @@ const status= document.getElementById("status");
 status.addEventListener("change", (e)=>{
   if (e.target.value==="0") {
     section.innerHTML=""; 
-      sliceResult.forEach(element =>{
-     
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-       
-      })
+     allCards(sliceResult)
     }
     else {
       let typeStatus = filterStatus(e.target.value, dataCharacters);
       section.innerHTML="";
   
       console.log(typeStatus);
-      typeStatus.forEach(element =>{
-       
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-      })
+      allCards(typeStatus)
     }
     gender.value="0";
     species.value="0";
@@ -276,44 +176,13 @@ const type= document.getElementById("type");
 type.addEventListener("change", (e)=>{
   if (e.target.value==="0") {
     section.innerHTML=""; 
-      sliceResult.forEach(element =>{
-     
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-       
-      })
+      allCards(sliceResult)
     }
     else {
       let type = filterType(e.target.value, dataCharacters);
       section.innerHTML="";
   
-      type.forEach(element =>{
-       
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-      })
+      allCards(type)
     }
   gender.value="0";
   species.value="0";
@@ -329,43 +198,12 @@ origin.addEventListener("change", (e)=>{
   if (e.target.value==="0") {
     section.innerHTML=""; 
 
-      sliceResult.forEach(element =>{
-     
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-       
-      })
+      allCards(sliceResult)
     }
     else {     
       let typeOrigin = filterOrigin(e.target.value, dataCharacters);
       section.innerHTML="";
-      typeOrigin.forEach(element =>{
-       
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-      })
+      allCards(typeOrigin)
     }
   gender.value="0";
   species.value="0";
@@ -379,45 +217,14 @@ const location= document.getElementById("location");
 location.addEventListener("change", (e)=>{
   if (e.target.value==="0") {
     section.innerHTML=""; 
-      sliceResult.forEach(element =>{
-     
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-       
-      })
+      allCards(sliceResult)
     }
     else {
   
       let typeLocation = filterLocation(e.target.value, dataCharacters);
       section.innerHTML="";
 
-      typeLocation.forEach(element =>{
-       
-        let html= `
-        
-        <section class="pickles" class="flex-boxx">
-        <img src=${element.image} class="image">
-        <div class="lettersWrap" id="prueba">
-            <div class="name">  ${element.name} </div>
-            <div class="species">Species: ${element.species} </div>
-            <div class="status">Status: ${element.status}</div>
-            <img class="pin" id="logo" src= "img/pinRick&M.png">
-
-        </div>
-        </section>`
-       section.innerHTML+=html;
-      })
+      allCards(typeLocation)
     }
   gender.value="0";
   species.value="0";
