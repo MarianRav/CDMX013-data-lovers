@@ -1,4 +1,4 @@
-import { filterGender, filterSpecies, filterStatus, filterType, filterOrigin, filterLocation } from '../src/data.js';
+import { filterGender, filterSpecies, filterStatus, filterType, filterOrigin, filterLocation, alphaOrd } from '../src/data.js';
 
 describe('filterGender', () => {
   it('is a function', () => {
@@ -210,4 +210,22 @@ describe('filterLocation',() => {
 
    expect(filterLocation("Citadel of Sade", data)).toEqual([]);
   });
+});
+
+//U.T. Function Ordenado
+describe('alphaOrd',() => {
+  it('is a function', () => { 
+    expect(typeof alphaOrd).toBe('function');
+ });
+
+ it('returns a sorted array from Z to A', ()=>{
+  const data= [
+    {name: "Chair-homeless"},
+    {name:"Boobloosian"},
+    {name:"Intelligent dog"},
+    {name:"Tuberculosis"}
+  ];
+
+  expect(alphaOrd(data)).toEqual([{name:"Tuberculosis"}, {name:"Intelligent dog"}, {name: "Chair-homeless"}, {name:"Boobloosian"}]);
+ });
 });
