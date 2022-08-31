@@ -6,7 +6,7 @@ import { filterOrigin } from './data.js';
 import { filterLocation } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 import {alphaOrd} from './data.js';
-//import {searchCharacter} from './data.js';
+import {searchCharacter} from './data.js';
 console.log(filterSpecies);
 console.log(data.results[0]);
 
@@ -36,10 +36,10 @@ let dataCharacters= data.results;
 
 //Search Function
 let formulario=document.getElementById("inputText");
-const boton=document.querySelector(".magGlass");
-const searchResult=document.getElementById("searchResults");
+//const boton=document.querySelector(".magGlass");
+//const searchResult=document.getElementById("searchResults");
 
-const searchCharacter=()=>{
+/*const searchCharacter=()=>{
   searchResult.innerHTML="";
   console.log(formulario.value);
   const texto=formulario.value.toLowerCase();
@@ -56,10 +56,9 @@ const searchCharacter=()=>{
       <li class="list" >Character not found...<li>
     `
     }
+}*/
+//boton.addEventListener("click", searchCharacter);
 
-}
-boton.addEventListener("click", searchCharacter)
-formulario.addEventListener("keyup", searchCharacter)
 /*function whatEver() {
   console.log(formulario);
  // console.log(searchCharacter);
@@ -79,7 +78,7 @@ orderSelect.addEventListener ("change", (e) => {
   if(e.target.value === "A-Z"){
     section.innerHTML="";
     allCards(orderBox.reverse())
-  
+
   }
 
 });
@@ -231,4 +230,24 @@ location.addEventListener("change", (e)=>{
   status.value="0";
   type.value="0";
   origin.value="0";
-    })
+    });
+
+    //Evento busqueda
+formulario.addEventListener("keyup", (e) =>{
+  console.log(e.target.value);
+  let modifiedInput= e.target.value.toLowerCase();
+ if(e.target.value !== ""){
+    section.innerHTML="";
+    /*let searchResults= searchCharacter(dataCharacters, modifiedInput);
+    allCards(searchResults);*/
+    console.log(searchCharacter(dataCharacters,modifiedInput)); 
+  }else{
+    allCards(sliceResult)}});
+
+
+
+//console.log(ejemplo);
+// Intento de función con dos parametros
+
+
+//console.log(busqueda(dataCharacters,modifiedInput))
