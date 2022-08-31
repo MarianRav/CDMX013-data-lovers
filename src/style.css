@@ -95,7 +95,7 @@ text-align: center;
   width: 60%;
 }
 
-#gender:hover, #species:hover, #status:hover, #type:hover, #origin:hover, #location:hover{
+#gender:hover, #species:hover, #status:hover, #type:hover, #origin:hover, #location:hover, #order:hover{
 
   cursor:pointer;
   background: linear-gradient(180deg, rgba(140, 192, 143, 0.295) 0.55%, rgba(41, 153, 56, 0.644) 100%);
@@ -305,5 +305,9 @@ right: 0;
 }
 
 .list {
+  color: aliceblue;
+}
+
+p{
   color: aliceblue;
 }

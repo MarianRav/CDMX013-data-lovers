@@ -17,10 +17,13 @@ export const alphaOrd = (data) => {
  }
  
 export const searchCharacter =(data, input)=>{
+  let array=[];
   data.forEach(character =>{
    let databaseInfo = character.name.toLowerCase();
    if(databaseInfo.indexOf(input)!== -1){
-    return console.log(character);
-   } 
+   array.push(character)
+   }
+
   })
+  return array;
 }
