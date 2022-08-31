@@ -238,16 +238,13 @@ formulario.addEventListener("keyup", (e) =>{
   let modifiedInput= e.target.value.toLowerCase();
  if(e.target.value !== ""){
     section.innerHTML="";
-    /*let searchResults= searchCharacter(dataCharacters, modifiedInput);
-    allCards(searchResults);*/
-    console.log(searchCharacter(dataCharacters,modifiedInput)); 
+    let searchResults= searchCharacter(dataCharacters, modifiedInput);
+    
+    console.log(searchCharacter(dataCharacters,modifiedInput));
+    if (searchResults===[]){
+      section.innerHTML="<p>Fuck yeah!!</p>"
+    } else {
+      allCards(searchResults);
+    }
   }else{
     allCards(sliceResult)}});
-
-
-
-//console.log(ejemplo);
-// Intento de función con dos parametros
-
-
-//console.log(busqueda(dataCharacters,modifiedInput))
