@@ -241,10 +241,10 @@ formulario.addEventListener("keyup", (e) =>{
     let searchResults= searchCharacter(dataCharacters, modifiedInput);
     
     console.log(searchCharacter(dataCharacters,modifiedInput));
-    if (searchResults===[]){
-      section.innerHTML="<p>Fuck yeah!!</p>"
+    if (searchResults.length===0){
+      section.innerHTML="<p>Character not found, maybe in an unknown dimention!!</p>"
     } else {
       allCards(searchResults);
-    }
+    } 
   }else{
     allCards(sliceResult)}});
