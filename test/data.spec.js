@@ -1,4 +1,4 @@
-import { filterGender, filterSpecies, filterStatus, filterType, filterOrigin, filterLocation, alphaOrd } from '../src/data.js';
+import { filterGender, filterSpecies, filterStatus, filterType, filterOrigin, filterLocation, alphaOrd, searchCharacter } from '../src/data.js';
 
 describe('filterGender', () => {
   it('is a function', () => {
@@ -228,4 +228,33 @@ describe('alphaOrd',() => {
 
   expect(alphaOrd(data)).toEqual([{name:"Tuberculosis"}, {name:"Intelligent dog"}, {name: "Chair-homeless"}, {name:"Boobloosian"}]);
  });
+});
+
+//U.T. Function Search
+
+describe('searchCharacter',() => { 
+  it('is a function',  () => { 
+     expect(typeof searchCharacter).toBe('function');
+  });
+
+  it('returns an array with objects that contains the same as the input given', () => {
+    const data= [
+      {name: "Snuffles (Snowball)"},
+      {name:"Baby Rick"},
+      {name:"Slow Rick"},
+      {name:"Flower Morty"}
+  ];
+  expect(searchCharacter(data,"Rick")).not.toBe([ {name:"Baby Rick"},{name:"Slow Rick"}]);
+})
+
+it('if the input that doesnt exist in data, returns an  empty array,',()=>{
+  const data= [
+    {name: "Snuffles (Snowball)"},
+    {name:"Baby Rick"},
+    {name:"Slow Rick"},
+    {name:"Flower Morty"}
+  ];
+
+ expect(searchCharacter(data, "Rata")).toEqual([]);
+});
 });

@@ -130,10 +130,11 @@ body:before {
   top:0;
   left:0;
   width: 100%;
-  min-height: 4312vh;
+  /*min-height: 4312vh;*/
   background: linear-gradient(to top right, #271d2b, #000000cb);
   opacity: 0.6;
   z-index:-3;
+  min-height: auto;
   }
 
 .flex-boxx {
