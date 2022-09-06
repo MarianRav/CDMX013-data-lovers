@@ -3,11 +3,12 @@
 ## Índice
 
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
-* [2. Investigación UX](#2-investigación-UX)
-* [3. Primer prototipo en papel](#3-prototipo-en-papel)
+* [2. Investigación UX](#2-investigación-ux)
+* [3. Primer prototipo en papel](#3-primer-prototipo-en-papel)      
 * [4. Imagen de prototipo alta fidelidad ](#4-imagen-de-prototipo-alta-fidelidad)
 * [5. Imagen final de prototipo alta fidelidad ](#5-imagen-final-de-prototipo-alta-fidelidad)
-* [6. Imagen adicional a Fun Facts](#6-Imagen-adicional-a-Fun-Facts)
+* [6. Imagen adicional a Fun Facts](#6-imagen-adicional-a-fun-facts)
+
 
 
 ***
@@ -32,18 +33,18 @@ problema alguno, ya que es amigable y ágil.
 ## 3. Primer prototipo en papel
 Se realizaron dos prototipos en papel, y se solicitó feedback a compañeras y coaches sobre ambos diseños.
 
-![Primer prototipo en papel](CDMX013-DATA-LOVERS/img/ProLapiz.jpg)
+![Primer prototipo en papel](img/ProLapiz.jpg)
 
 ## 4. Imagen de prototipo alta fidelidad
 A partir de los comentarios recibidos, se mezclaron detalles de ambos prototipos para posteriormente plasmarlos en figma.
 
-![Imagen de prototipo alta fidelidad](CDMX013-DATA-LOVERS/img/firstPAF.png)
+![Imagen de prototipo alta fidelidad](img/firstPAF.png)
 
 ## 5. Imagen final de prototipo alta fidelidad
 Durante el desarrollo del proyecto, agregamos más detalles al prototipo y solicitamos feedback sobre lo realizado, 
 con el objetivo de que la página fuese lo más amigable para el usuario.
 
-![Imagen final de prototipo alta fidelidad](CDMX013-DATA-LOVERS/img/secondPAF.png)
+![Imagen final de prototipo alta fidelidad](img/secondPAF.png)
 
 ## 6. Imagen adicional a Fun Facts
 Al acercarnos al final del proyecto, decidimos agregar una sección de datos curiosos e incluyendo estadísticas, sobre ciertos datos peculiares de los personajes principales.
