@@ -1,4 +1,4 @@
-import { filterGender, filterSpecies, filterStatus, filterType, filterOrigin, filterLocation, alphaOrd, searchCharacter } from '../src/data.js';
+import { filterGender, filterSpecies, filterStatus, filterType, filterOrigin, filterLocation, alphaOrd, searchCharacter, computeStats } from '../src/data.js';
 
 describe('filterGender', () => {
   it('is a function', () => {
@@ -17,7 +17,7 @@ describe('filterGender', () => {
   });
 
   //copy
-  it('for an element that doesn´t exist, returns an  empty array', () => {
+  it('for an element that doesnt exist, returns an  empty array', () => {
     const data= [
     {gender:"Female"},
     {gender:"Male"},
@@ -258,3 +258,23 @@ it('if the input that doesnt exist in data, returns an  empty array,',()=>{
  expect(searchCharacter(data, "Rata")).toEqual([]);
 });
 });
+
+//U.T. Function computeStats
+describe('computeStats',() => {
+  it('is a function', () => { 
+    expect(typeof computeStats).toBe('function');
+ });
+
+ it('returns percentage of the unknown status of Morty character', ()=>{
+  const statusMortys= [
+    {totalMortys: 44},
+    {deadMortys:9},
+    {alive:22},
+    {unknownMortys:13}
+    
+  ];
+
+  expect(computeStats(statusMortys[3].unknownMortys, 44)).toBe((Math.floor((13*100) / 44)));
+ });
+});
+
