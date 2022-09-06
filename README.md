@@ -48,4 +48,4 @@ con el objetivo de que la página fuese lo más amigable para el usuario.
 ## 6. Imagen adicional a Fun Facts
 Al acercarnos al final del proyecto, decidimos agregar una sección de datos curiosos e incluyendo estadísticas, sobre ciertos datos peculiares de los personajes principales.
 
-![Imagen adicional a Fun Facts](CDMX013-DATA-LOVERS/img/Funfacts.png) 
+![Imagen adicional a Fun Facts](img/Funfacts.png) 
