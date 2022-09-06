@@ -3,11 +3,11 @@
 ## Índice
 
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
-* [2. Investigación UX](#2-investigación-UX)
-* [3. Primer prototipo en papel](#3-prototipo-en-papel)
+* [2. Investigación UX](#2-investigación-ux)
+* [3. Primer prototipo en papel](#3-primer-prototipo-en-papel)
 * [4. Imagen de prototipo alta fidelidad ](#4-imagen-de-prototipo-alta-fidelidad)
 * [5. Imagen final de prototipo alta fidelidad ](#5-imagen-final-de-prototipo-alta-fidelidad)
-* [6. Imagen adicional a Fun Facts](#6-Imagen-adicional-a-Fun-Facts)
+* [6. Imagen adicional a Fun Facts](#6-imagen-adicional-a-fun-facts)
 
 
 ***
