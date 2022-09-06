@@ -7,6 +7,7 @@ import { filterLocation } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 import {alphaOrd} from './data.js';
 import {searchCharacter} from './data.js';
+import {computeStats} from './data.js';
 console.log(filterSpecies);
 console.log(data.results[0]);
 
@@ -242,9 +243,96 @@ formulario.addEventListener("keyup", (e) =>{
     
     console.log(searchCharacter(dataCharacters,modifiedInput));
     if (searchResults.length===0){
-      section.innerHTML="<p>Character not found, maybe in an unknown dimention!!</p>"
+      section.innerHTML=`<div class="textNotFound"> <h2>Character not found, maybe in an unknown dimention!!</h2> </div>
+                         <div class="notFound"> <img class="portal"src= "img/rickNot.gif"></div>
+                         `
+                                         
     } else {
       allCards(searchResults);
     } 
   }else{
     allCards(sliceResult)}});
+
+    const btnFacts= document.getElementById("funFacts");
+
+    btnFacts.addEventListener ("click", (e) => {
+      computeStats(244, 493);
+      section.innerHTML="";
+      section.innerHTML=`<section>
+                       
+                         <div  class="flex-boxx"> 
+                          
+                          <!-- Dead Morty-->
+
+                          <div class="backGrou">
+                          <div class="h3contain"> CITADEL MORNING presents FUN FACTS</div>
+                          <div class="h4contain">Another dead Morty!</div>
+                          <div class="h5contain"> Records show that from a 44 Mortys that we know until now,
+                         ${computeStats(9,44)}% are dead and ${computeStats(13,44)}% with unknown status.</div>
+                          <div> <img class="mortem" src= "img/deadmortyTV.png"></div>
+                          <div class="sarcasmMorty">What a surprise! (sarcasm) </div>
+                          </div>
+                     
+                          <!-- RICK DEAD -->
+
+                          <div class="backGrou">
+                          <div class="h3contain"> CITADEL MORNING presents FUN FACTS</div>
+                          <div class="h4containRick">Sad news today!</div>
+                          <div class="h5containRick"> Another Rick was found dead, from 73 Ricks that we know until now,
+                         ${computeStats(33,73)}% are dead and ${computeStats(19,73)}% with unknown status.</div>
+                          <div> <img class="mortemRick"src= "img/deadrickTV.png"></div>
+                          </div>
+
+                          <!-- Most populated dimention -->
+
+                          <div class="backGrou">
+                          <div class="h3contain"> CITADEL MORNING presents FUN FACTS</div>
+                          <div class="h4contain">Stop having kids!</div>
+                          <div class="h5contain">New info shows that Earth(Replacement Dimension), has the largest population of all dimensions with             
+                         ${computeStats(105,493)}%. </div>
+                          <div> <img class="mortem"src= "img/allCharTV.png"></div>
+                          <div class="noBabe">  <img class="babyRick"src= "img/babyrick.png"></div>
+                          <div class="sarcasmMorty">No more babies!</div>
+                          </div>
+
+                          <!-- HUMANOID -->
+
+                          <div class="backGrou">
+                          <div class="h3contain"> CITADEL MORNING presents FUN FACTS</div>
+                          <div class="h4containRick">It's a trap!</div>
+                          <div class="h5containRick">Experts inform that Humanoids are the species with more presence of all dimensions 
+                          after humans with a ${computeStats(53,493)}%.</div>
+                          <div> <img class="mortemRick"src= "img/humanoidTV.png"></div>
+                          </div>
+
+                          <!-- unknown origin -->
+
+                          <div class="backGrouOrigin">
+                          <div class="h3contain"> CITADEL MORNING presents FUN FACTS</div>
+                          <div class="h4contain">Don't trust anyone!</div>
+                          <div class="h5contain"> Records show that from 493 characters ${computeStats(244,493)}% are from an unkown origin.</div> 
+                          <div class="beCareful">Be careful! </div>
+                          <div> <img class="mortem"src= "img/ricksTV.png"></div>
+                          <div class="stayTuned">Stay tuned for more Funfacts here in CITADEL MORNING!</div>
+                            </div>
+                            
+                        </div>
+                            
+                        </section>
+                        `
+      console.log(e);
+     console.log(computeStats(244, 493));
+    }) 
+
+
+//Estadisticas counter.
+
+/*let count={};
+dataCharacters.forEach(item => {
+if (count[item.origin.name]) {
+    count [item.origin.name]++;
+}else {
+  count [item.origin.name]=1;
+}
+})
+console.log(count);*/

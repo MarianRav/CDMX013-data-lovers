@@ -21,9 +21,19 @@ export const searchCharacter =(data, input)=>{
   data.forEach(character =>{
    let databaseInfo = character.name.toLowerCase();
    if(databaseInfo.indexOf(input)!== -1){
+    //if (character.status==="unknown")
    array.push(character)
    }
 
   })
   return array;
+}
+
+//Statistics %
+
+export const computeStats =(quantity, total ) => {
+  let totalPer=(quantity*100) / total;
+  console.log(typeof parseInt (totalPer.toFixed(0)));
+  return parseInt (Math.floor(totalPer)
+  );
 }
