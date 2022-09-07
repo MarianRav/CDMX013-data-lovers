@@ -6,21 +6,25 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/10c884f627.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Schoolbell&display=swap" rel="stylesheet">
   </head>  
-
-  <header>
-           <section class="flex-container">
   
-             <div> <img id="gif" src="img/gifRick.gif" ></div>
-               <div> <img id="titleRM" src="img/titlerick.png" ></div>
-                 <div class="magGlass"> <i class="fa-solid fa-magnifying-glass"></i> </div>
+  <header>
 
-           </section>
-  <div class="navbar"> 
-    <!--button of all characters-->
+    <section class="flex-container">
+      <div class="buscador">
+        <input id="inputText" type="text" placeholder="Search by name...">
+        
+      </div>
+      <div> <img id="gif" src="img/gifRick.gif" ></div>
+      <div> <img id="titleRM" src="img/titlerick.png" ></div>
+      <div class="magGlass"> <i class="fa-solid fa-magnifying-glass"></i> </div>
+      <li id="searchResults"></li>
+    </section>
     
-      <div class="options"> Gender </br>
+  <div class="navbar"> 
+
+      <div class="options"> Gender <br>
         <select id="gender"> 
           <option   value="0"> Select --</option>
           <option   value="unknown"> Unknown</option>
@@ -30,7 +34,7 @@
         </select>
       </div>
 
-      <div class="options"> Species <br/>
+      <div class="options"> Species <br>
         <select id="species"> 
 
           <option  value="0"> Select --</option>
@@ -50,7 +54,7 @@
         </select>
       </div>
 
-      <div class="options"> Status</br>
+      <div class="options"> Status<br>
         <select id="status"> 
            <option value="0"> Select --</option>
            <option  value="Alive"> Alive</option>
@@ -59,7 +63,7 @@
         </select>
       </div>
   
-      <div class="options"> Type </br>
+      <div class="options"> Type <br>
         <select id="type"> 
           <option value="0"> Select --</option>
           <option value="Alien">Alien</option>
@@ -126,7 +130,7 @@
         </select>
        </div>
 
-       <div class="options"> Origin </br>
+       <div class="options"> Origin <br>
         <select id="origin">
           <option value="0"> Select --</option>
           <option value="Abadango"> Abadango</option>
@@ -195,7 +199,7 @@
         </select>
       </div>
 
-      <div class="options"> Location </br>
+      <div class="options"> Location <br>
         <select id="location"> 
           <option value="0"> Select --</option>
           <option value="Abadango">Abadango</option>
@@ -237,11 +241,21 @@
           <option value="Zeep Xanflorp's Miniverse">Zeep Xanflorp's Miniverse</option>
           <option value="Zigerion's Base">Zigerion's Base</option>
         </select>
+        
       </div>
 
-      <button id="btnAllCharacters">RESET</button>
+      <div class="options"> Sort by: <br>
+        <select id="order">
+          <option value="0">Select --</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+        </select>
+          
+      </div>
+       <button id="funFacts"> Fun Facts</button>
+      <button id="btnAllCharacters">All Characters</button>
 
-    </div>
+    </div> <!--Cierre Navbar-->
   </header>
 
   <body>
@@ -250,8 +264,8 @@
     
     <div id="content">
       <div id= "container" class="flex-boxx"> </div>
+      <button id="button">BACK TO THE TOP</button>
     </div>
-    <button id="button">BACK TO THE TOP</button>
 
     <div id="root"> </div>
   
