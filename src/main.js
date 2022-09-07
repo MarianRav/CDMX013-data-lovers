@@ -35,38 +35,6 @@ allCards(sliceResult);
 
 let dataCharacters= data.results;
 
-//Search Function
-let formulario=document.getElementById("inputText");
-//const boton=document.querySelector(".magGlass");
-//const searchResult=document.getElementById("searchResults");
-
-/*const searchCharacter=()=>{
-  searchResult.innerHTML="";
-  console.log(formulario.value);
-  const texto=formulario.value.toLowerCase();
-  for (let character of dataCharacters) {
-    let nombre=character.name.toLowerCase();
-    if (nombre.indexOf(texto) !== -1) {
-      searchResult.innerHTML += `
-        <li class="list">${character.name} <li>
-      `
-    }
-  }
-    if (searchResult.innerHTML === "") {
-      searchResult.innerHTML += `
-      <li class="list" >Character not found...<li>
-    `
-    }
-}*/
-//boton.addEventListener("click", searchCharacter);
-
-/*function whatEver() {
-  console.log(formulario);
- // console.log(searchCharacter);
-  console.log(searchCharacter(dataCharacters, formulario.value));
- // return formulario; 
-
-}*/
 //Alphabetical Order
 
 const orderSelect=document.getElementById("order");
@@ -233,7 +201,10 @@ location.addEventListener("change", (e)=>{
   origin.value="0";
     });
 
-    //Evento busqueda
+    
+    //Search Function
+let formulario=document.getElementById("inputText");
+
 formulario.addEventListener("keyup", (e) =>{
   console.log(e.target.value);
   let modifiedInput= e.target.value.toLowerCase();
